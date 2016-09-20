@@ -48,6 +48,7 @@
     if([self.navigationController.viewControllers count] > 1){
         UIBarButtonItem* back = [[UIBarButtonItem alloc]initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backButton:)];
         self.navigationItem.leftBarButtonItem = back;
+        [self.tableView reloadData];
         //self.backHome.hidden = NO;
         /*
         //self.navigationItem.rightBarButtonItem.image = [UIImage imageNamed:@"domik.png"];
@@ -197,7 +198,7 @@
 //значек добавления либо удаления ячейки
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return indexPath.row == 0 ? UITableViewCellEditingStyleNone : UITableViewCellEditingStyleDelete;
+    return UITableViewCellEditingStyleDelete;
 }
 
 

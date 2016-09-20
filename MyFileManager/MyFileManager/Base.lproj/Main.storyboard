@@ -68,6 +68,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ja8-km-6uo">
+                                <rect key="frame" x="100" y="77" width="121" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="Folder"/>
+                                    <segment title="File"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeSegment:" destination="k1Y-dS-vR5" eventType="editingChanged" id="Nq6-M8-N9d"/>
+                                    <action selector="tochUpInside:" destination="k1Y-dS-vR5" eventType="touchUpInside" id="Er3-2p-DDC"/>
+                                    <action selector="touchown:" destination="k1Y-dS-vR5" eventType="touchDown" id="k5Z-FJ-wKd"/>
+                                    <action selector="valueChange:" destination="k1Y-dS-vR5" eventType="valueChanged" id="rdV-wb-Z6t"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,7 +89,9 @@
                     <navigationItem key="navigationItem" id="Dar-Wg-LeB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="labelName" destination="axr-1H-5Ze" id="ROp-2z-azS"/>
                         <outlet property="nameNewFolder" destination="UiK-qO-ofB" id="OIC-Z4-7ot"/>
+                        <outlet property="segmentControl" destination="Ja8-km-6uo" id="Hmo-iT-Kce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gE-8b-NbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,6 +197,7 @@
                                     </connections>
                                 </button>
                             </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="hTx-sC-G0H"/>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem style="plain" id="9my-AM-Xgq">

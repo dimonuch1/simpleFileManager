@@ -31,6 +31,8 @@
         if(!fm)
             NSLog(@"Manager dosen't exist!");
         NSError* error = nil;
+        
+        if(self.segmentControl.selectedSegmentIndex == 0){
     if(![fm createDirectoryAtPath: [self.path stringByAppendingPathComponent:self.nameNewFolder.text]
              withIntermediateDirectories:YES
                               attributes:nil
@@ -40,7 +42,17 @@
         
         [self.navigationController popViewControllerAnimated:YES];
     }
-    }else{
+        }else if(self.segmentControl.selectedSegmentIndex == 1){
+            NSString* filePath = [self.path stringByAppendingPathComponent:self.nameNewFolder.text];
+            filePath = [NSString stringWithFormat:@"%@.txt",filePath];
+            [fm createFileAtPath:filePath
+                        contents:nil
+                      attributes:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    }
+    else{
     
         UIAlertView* alert = [[UIAlertView alloc]initWithTitle:nil
                                                        message:@"Please enter some text"
@@ -52,6 +64,24 @@
     }
         
 }
+
+
+
+
+- (IBAction)valueChange:(UISegmentedControl *)sender {
+    
+    if(sender.selectedSegmentIndex == 0){
+        self.labelName.text = @"Folder Name";
+        self.nameNewFolder.placeholder = @"folder naem";
+        
+    }else if(sender.selectedSegmentIndex == 1){
+        self.labelName.text = @"File Name";
+        self.nameNewFolder.placeholder = @"file naem";
+    }
+
+    
+}
+
 
 #pragma mark - UITextFieldDelegate
 
