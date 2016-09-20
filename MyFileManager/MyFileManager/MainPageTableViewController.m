@@ -37,8 +37,10 @@
     if(!self.path){
         self.path = @"/Users";
     }
+    /*
     self.tableView.editing = YES;
     self.tableView.allowsSelectionDuringEditing = YES;
+     */
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -108,10 +110,43 @@
 
 
 - (IBAction)deleteButton:(UIButton *)sender {
+    //static BOOL b = NO;
+    self.tableView.editing = !self.tableView.editing;
 }
 
 
 #pragma mark - UITableViewDataSource
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        
+        //NSLog(@"%@",indexPath);
+        NSString* fileName = [self.contents objectAtIndex:indexPath.row];
+        NSString* filePath = [self.path stringByAppendingPathComponent:fileName];
+        NSFileManager* fm = [NSFileManager defaultManager];
+        NSError* error = nil;
+        if(![fm removeItemAtPath:filePath error:&error]){
+            NSLog(@"Error: %@",error.description);
+        }
+        
+        NSMutableArray* tmp = [NSMutableArray arrayWithArray:self.contents];
+        [tmp removeObjectAtIndex:indexPath.row];
+        self.contents = tmp;
+        [self.tableView reloadData];
+        
+        
+        /*
+        [self.tableView beginUpdates];
+        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath]
+                              withRowAnimation:UITableViewRowAnimationRight];
+        
+        [self.tableView endUpdates];
+         */
+    }
+    
+    
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -198,6 +233,7 @@
 -(void) prepareForSegue:(nonnull UIStoryboardSegue *)segue sender:(nullable id)sender{
     CreateNewFolder* cf = segue.destinationViewController;
     [cf setPath:_path];
+    [self.tableView reloadData];
 }
 
 /*
