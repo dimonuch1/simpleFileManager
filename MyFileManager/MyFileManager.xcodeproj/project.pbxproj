@@ -26,6 +26,7 @@
 		32FB9A621D7F1B50003EDD75 /* MyFileManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FB9A611D7F1B50003EDD75 /* MyFileManagerUITests.m */; };
 		32FB9A761D7F21F4003EDD75 /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FB9A751D7F21F4003EDD75 /* MainPageTableViewController.m */; };
 		32FD49781D91980300B0C4AA /* delete_folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FD49771D91980300B0C4AA /* delete_folder.png */; };
+		32FD497B1D91A81C00B0C4AA /* ForGit.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FD497A1D91A81C00B0C4AA /* ForGit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		32FB9A741D7F21F4003EDD75 /* MainPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageTableViewController.h; sourceTree = "<group>"; };
 		32FB9A751D7F21F4003EDD75 /* MainPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageTableViewController.m; sourceTree = "<group>"; };
 		32FD49771D91980300B0C4AA /* delete_folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_folder.png; sourceTree = "<group>"; };
+		32FD49791D91A81C00B0C4AA /* ForGit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForGit.h; sourceTree = "<group>"; };
+		32FD497A1D91A81C00B0C4AA /* ForGit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForGit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 				32EE368B1D8330ED00B6A8F6 /* CreateFolderSwift.swift */,
 				32EE368A1D8330EC00B6A8F6 /* MyFileManager-Bridging-Header.h */,
 				32EE36901D8332AA00B6A8F6 /* CreateNewFolder */,
+				32FD49791D91A81C00B0C4AA /* ForGit.h */,
+				32FD497A1D91A81C00B0C4AA /* ForGit.m */,
 			);
 			path = MyFileManager;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				32EE368C1D8330ED00B6A8F6 /* CreateFolderSwift.swift in Sources */,
 				32FB9A441D7F1B4F003EDD75 /* ViewController.m in Sources */,
 				32FB9A761D7F21F4003EDD75 /* MainPageTableViewController.m in Sources */,
+				32FD497B1D91A81C00B0C4AA /* ForGit.m in Sources */,
 				321CBB291D815CF500D892E2 /* FolderViewCell.m in Sources */,
 				32FB9A411D7F1B4F003EDD75 /* AppDelegate.m in Sources */,
 				321CBB251D815CCD00D892E2 /* FileViewCell.m in Sources */,
